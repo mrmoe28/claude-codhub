@@ -1,0 +1,191 @@
+// ErrorFixerApp
+// A Swift macOS desktop app to generate Claude Code prompts for fixing code errors
+
+import SwiftUI
+import AppKit
+
+@main
+struct ErrorFixerApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        .commands {
+            CommandMenu("Claude") {
+                Button("Open Claude Code") {
+                    openClaudeInBrowser()
+                }
+                .keyboardShortcut("o", modifiers: [.command, .shift])
+            }
+        }
+    }
+
+    func openClaudeInBrowser() {
+        if let url = URL(string: "https://claude.ai") {
+            NSWorkspace.shared.open(url)
+        }
+    }
+}
+
+struct ContentView: View {
+    @AppStorage("darkMode") private var darkMode: Bool = false
+    @State private var errorText: String = ""
+    @State private var generatedPrompt: String = ""
+    @State private var exampleFixVisible: Bool = false
+    @State private var promptHistory: [(error: String, prompt: String)] = []
+    @State private var showDuplicateWarning: Bool = false
+    @State private var monitoringClaude = false
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Paste or drag an error below:")
+                Spacer()
+                Toggle("Dark Mode", isOn: $darkMode).toggleStyle(SwitchToggleStyle())
+                    .onChange(of: darkMode) { _ in
+                        NSApp.appearance = darkMode ? NSAppearance(named: .darkAqua) : NSAppearance(named: .aqua)
+                    }
+            }
+
+            TextEditor(text: $errorText)
+                .frame(height: 100)
+                .border(Color.gray)
+                .onDrop(of: [.plainText], isTargeted: nil) { providers in
+                    providers.first?.loadItem(forTypeIdentifier: "public.plain-text", options: nil) { item, _ in
+                        if let data = item as? Data, let string = String(data: data, encoding: .utf8) {
+                            DispatchQueue.main.async {
+                                errorText = string
+                            }
+                        }
+                    }
+                    return true
+                }
+
+            HStack {
+                Button("Generate Prompt") {
+                    let prompt = generateClaudePrompt(for: errorText)
+                    generatedPrompt = prompt
+
+                    if promptHistory.contains(where: { $0.error == errorText }) {
+                        showDuplicateWarning = true
+                    } else {
+                        showDuplicateWarning = false
+                        promptHistory.insert((errorText, prompt), at: 0)
+                    }
+                }
+                Button("Open Claude Code") {
+                    openClaudeInBrowser()
+                    monitoringClaude = true
+                }
+                Button("Open Another Claude Terminal") {
+                    openClaudeInBrowser()
+                    monitoringClaude = true
+                }
+            }
+            .padding(.top)
+
+            if showDuplicateWarning {
+                Text("⚠️ Duplicate error already saved.").foregroundColor(.orange)
+            }
+
+            if !generatedPrompt.isEmpty {
+                HStack {
+                    Text("Claude Prompt:").font(.headline)
+                    Spacer()
+                    Button("Copy Prompt") {
+                        NSPasteboard.general.clearContents()
+                        NSPasteboard.general.setString(generatedPrompt, forType: .string)
+                    }
+                }
+
+                ScrollView {
+                    Text(generatedPrompt).padding().border(Color.gray)
+                }.frame(height: 200)
+
+                Toggle("Show Example Claude Fix", isOn: $exampleFixVisible)
+
+                if exampleFixVisible {
+                    Text("Example Fix:")
+                    ScrollView {
+                        Text("This error means you're trying to assign an optional value to a non-optional. Use optional binding or force unwrap if you're sure it's non-nil.").padding().border(Color.blue)
+                    }.frame(height: 100)
+                }
+            }
+
+            if !promptHistory.isEmpty {
+                Text("History:").font(.headline)
+                ScrollView {
+                    ForEach(promptHistory, id: \.(error)) { item in
+                        VStack(alignment: .leading) {
+                            Text("Error:").bold()
+                            Text(item.error)
+                            Text("Prompt:").bold()
+                            Text(item.prompt)
+                            Divider()
+                        }.padding(5)
+                        Button("Copy Prompt") {
+                            NSPasteboard.general.clearContents()
+                            NSPasteboard.general.setString(item.prompt, forType: .string)
+                        }
+                    }
+                }.frame(height: 200)
+            }
+        }
+        .padding()
+        .onAppear {
+            NSApp.appearance = darkMode ? NSAppearance(named: .darkAqua) : NSAppearance(named: .aqua)
+        }
+        .onChange(of: monitoringClaude) { active in
+            if active {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) {
+                    checkClaudeConfirmationPopups()
+                }
+            }
+        }
+    }
+
+    func openClaudeInBrowser() {
+        if let url = URL(string: "https://claude.ai") {
+            NSWorkspace.shared.open(url)
+        }
+    }
+
+    func checkClaudeConfirmationPopups() {
+        let script = """
+        tell application "System Events"
+            set frontApp to name of first application process whose frontmost is true
+            if frontApp contains "Safari" or frontApp contains "Chrome" then
+                try
+                    set theButtons to every button of every window of process frontApp
+                    repeat with b in theButtons
+                        if name of b contains "Yes" or name of b contains "Allow" then
+                            display dialog "Claude Terminal is asking for confirmation. Please respond manually." buttons ["OK"] default button 1
+                            exit repeat
+                        end if
+                    end repeat
+                end try
+            end if
+        end tell
+        """
+        let appleScript = NSAppleScript(source: script)
+        var errorDict: NSDictionary? = nil
+        appleScript?.executeAndReturnError(&errorDict)
+    }
+
+    func generateClaudePrompt(for error: String) -> String {
+        return """
+You are my expert debugging assistant. I'm experiencing the following error:
+
+\"\"\(error)\"\"
+
+Please:
+1. Analyze and explain the root cause.
+2. Search the web for similar issues and trusted solutions.
+3. Recommend the best fix.
+4. Provide corrected code if needed.
+5. Share tips to avoid this error in future.
+
+Respond with a fix and explanation I can use right away.
+"""
+    }
+}

@@ -12,37 +12,37 @@
 			containerPortal = 0AA667892E2AF49C006E5AEF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0AA667902E2AF49C006E5AEF;
-			remoteInfo = "Claude Code Hub";
+			remoteInfo = ClaudeCodeHub;
 		};
 		0AA667AC2E2AF49F006E5AEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0AA667892E2AF49C006E5AEF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0AA667902E2AF49C006E5AEF;
-			remoteInfo = "Claude Code Hub";
+			remoteInfo = ClaudeCodeHub;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AA667912E2AF49C006E5AEF /* Claude Code Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Claude Code Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AA667A12E2AF49F006E5AEF /* Claude Code HubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Claude Code HubTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AA667AB2E2AF49F006E5AEF /* Claude Code HubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Claude Code HubUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AA667912E2AF49C006E5AEF /* ClaudeCodeHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClaudeCodeHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AA667A12E2AF49F006E5AEF /* ClaudeCodeHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClaudeCodeHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AA667AB2E2AF49F006E5AEF /* ClaudeCodeHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClaudeCodeHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0AA667932E2AF49C006E5AEF /* Claude Code Hub */ = {
+		0AA667932E2AF49C006E5AEF /* ClaudeCodeHub */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Claude Code Hub";
+			path = ClaudeCodeHub;
 			sourceTree = "<group>";
 		};
-		0AA667A42E2AF49F006E5AEF /* Claude Code HubTests */ = {
+		0AA667A42E2AF49F006E5AEF /* ClaudeCodeHubTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Claude Code HubTests";
+			path = ClaudeCodeHubTests;
 			sourceTree = "<group>";
 		};
-		0AA667AE2E2AF49F006E5AEF /* Claude Code HubUITests */ = {
+		0AA667AE2E2AF49F006E5AEF /* ClaudeCodeHubUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Claude Code HubUITests";
+			path = ClaudeCodeHubUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		0AA667882E2AF49C006E5AEF = {
 			isa = PBXGroup;
 			children = (
-				0AA667932E2AF49C006E5AEF /* Claude Code Hub */,
-				0AA667A42E2AF49F006E5AEF /* Claude Code HubTests */,
-				0AA667AE2E2AF49F006E5AEF /* Claude Code HubUITests */,
+				0AA667932E2AF49C006E5AEF /* ClaudeCodeHub */,
+				0AA667A42E2AF49F006E5AEF /* ClaudeCodeHubTests */,
+				0AA667AE2E2AF49F006E5AEF /* ClaudeCodeHubUITests */,
 				0AA667922E2AF49C006E5AEF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		0AA667922E2AF49C006E5AEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0AA667912E2AF49C006E5AEF /* Claude Code Hub.app */,
-				0AA667A12E2AF49F006E5AEF /* Claude Code HubTests.xctest */,
-				0AA667AB2E2AF49F006E5AEF /* Claude Code HubUITests.xctest */,
+				0AA667912E2AF49C006E5AEF /* ClaudeCodeHub.app */,
+				0AA667A12E2AF49F006E5AEF /* ClaudeCodeHubTests.xctest */,
+				0AA667AB2E2AF49F006E5AEF /* ClaudeCodeHubUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0AA667902E2AF49C006E5AEF /* Claude Code Hub */ = {
+		0AA667902E2AF49C006E5AEF /* ClaudeCodeHub */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AA667B52E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "Claude Code Hub" */;
+			buildConfigurationList = 0AA667B52E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "ClaudeCodeHub" */;
 			buildPhases = (
 				0AA6678D2E2AF49C006E5AEF /* Sources */,
 				0AA6678E2E2AF49C006E5AEF /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				0AA667932E2AF49C006E5AEF /* Claude Code Hub */,
+				0AA667932E2AF49C006E5AEF /* ClaudeCodeHub */,
 			);
-			name = "Claude Code Hub";
+			name = ClaudeCodeHub;
 			packageProductDependencies = (
 			);
-			productName = "Claude Code Hub";
-			productReference = 0AA667912E2AF49C006E5AEF /* Claude Code Hub.app */;
+			productName = ClaudeCodeHub;
+			productReference = 0AA667912E2AF49C006E5AEF /* ClaudeCodeHub.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0AA667A02E2AF49F006E5AEF /* Claude Code HubTests */ = {
+		0AA667A02E2AF49F006E5AEF /* ClaudeCodeHubTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AA667B82E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "Claude Code HubTests" */;
+			buildConfigurationList = 0AA667B82E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "ClaudeCodeHubTests" */;
 			buildPhases = (
 				0AA6679D2E2AF49F006E5AEF /* Sources */,
 				0AA6679E2E2AF49F006E5AEF /* Frameworks */,
@@ -131,18 +131,18 @@
 				0AA667A32E2AF49F006E5AEF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				0AA667A42E2AF49F006E5AEF /* Claude Code HubTests */,
+				0AA667A42E2AF49F006E5AEF /* ClaudeCodeHubTests */,
 			);
-			name = "Claude Code HubTests";
+			name = ClaudeCodeHubTests;
 			packageProductDependencies = (
 			);
-			productName = "Claude Code HubTests";
-			productReference = 0AA667A12E2AF49F006E5AEF /* Claude Code HubTests.xctest */;
+			productName = ClaudeCodeHubTests;
+			productReference = 0AA667A12E2AF49F006E5AEF /* ClaudeCodeHubTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0AA667AA2E2AF49F006E5AEF /* Claude Code HubUITests */ = {
+		0AA667AA2E2AF49F006E5AEF /* ClaudeCodeHubUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AA667BB2E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "Claude Code HubUITests" */;
+			buildConfigurationList = 0AA667BB2E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "ClaudeCodeHubUITests" */;
 			buildPhases = (
 				0AA667A72E2AF49F006E5AEF /* Sources */,
 				0AA667A82E2AF49F006E5AEF /* Frameworks */,
@@ -154,13 +154,13 @@
 				0AA667AD2E2AF49F006E5AEF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				0AA667AE2E2AF49F006E5AEF /* Claude Code HubUITests */,
+				0AA667AE2E2AF49F006E5AEF /* ClaudeCodeHubUITests */,
 			);
-			name = "Claude Code HubUITests";
+			name = ClaudeCodeHubUITests;
 			packageProductDependencies = (
 			);
-			productName = "Claude Code HubUITests";
-			productReference = 0AA667AB2E2AF49F006E5AEF /* Claude Code HubUITests.xctest */;
+			productName = ClaudeCodeHubUITests;
+			productReference = 0AA667AB2E2AF49F006E5AEF /* ClaudeCodeHubUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0AA6678C2E2AF49C006E5AEF /* Build configuration list for PBXProject "Claude Code Hub" */;
+			buildConfigurationList = 0AA6678C2E2AF49C006E5AEF /* Build configuration list for PBXProject "ClaudeCodeHub" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0AA667902E2AF49C006E5AEF /* Claude Code Hub */,
-				0AA667A02E2AF49F006E5AEF /* Claude Code HubTests */,
-				0AA667AA2E2AF49F006E5AEF /* Claude Code HubUITests */,
+				0AA667902E2AF49C006E5AEF /* ClaudeCodeHub */,
+				0AA667A02E2AF49F006E5AEF /* ClaudeCodeHubTests */,
+				0AA667AA2E2AF49F006E5AEF /* ClaudeCodeHubUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		0AA667A32E2AF49F006E5AEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0AA667902E2AF49C006E5AEF /* Claude Code Hub */;
+			target = 0AA667902E2AF49C006E5AEF /* ClaudeCodeHub */;
 			targetProxy = 0AA667A22E2AF49F006E5AEF /* PBXContainerItemProxy */;
 		};
 		0AA667AD2E2AF49F006E5AEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0AA667902E2AF49C006E5AEF /* Claude Code Hub */;
+			target = 0AA667902E2AF49C006E5AEF /* ClaudeCodeHub */;
 			targetProxy = 0AA667AC2E2AF49F006E5AEF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -390,7 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Claude Code Hub/Claude_Code_Hub.entitlements";
+				CODE_SIGN_ENTITLEMENTS = ClaudeCodeHub/ClaudeCodeHub.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X7BUD5GD8P;
@@ -429,7 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Claude Code Hub/Claude_Code_Hub.entitlements";
+				CODE_SIGN_ENTITLEMENTS = ClaudeCodeHub/ClaudeCodeHub.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X7BUD5GD8P;
@@ -481,7 +481,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Claude Code Hub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Claude Code Hub";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClaudeCodeHub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClaudeCodeHub";
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
@@ -504,7 +504,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Claude Code Hub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Claude Code Hub";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClaudeCodeHub.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClaudeCodeHub";
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
@@ -526,7 +526,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = "Claude Code Hub";
+				TEST_TARGET_NAME = ClaudeCodeHub;
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
@@ -548,7 +548,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = "Claude Code Hub";
+				TEST_TARGET_NAME = ClaudeCodeHub;
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
@@ -556,7 +556,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0AA6678C2E2AF49C006E5AEF /* Build configuration list for PBXProject "Claude Code Hub" */ = {
+		0AA6678C2E2AF49C006E5AEF /* Build configuration list for PBXProject "ClaudeCodeHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AA667B32E2AF49F006E5AEF /* Debug */,
@@ -565,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0AA667B52E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "Claude Code Hub" */ = {
+		0AA667B52E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "ClaudeCodeHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AA667B62E2AF49F006E5AEF /* Debug */,
@@ -574,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0AA667B82E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "Claude Code HubTests" */ = {
+		0AA667B82E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "ClaudeCodeHubTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AA667B92E2AF49F006E5AEF /* Debug */,
@@ -583,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0AA667BB2E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "Claude Code HubUITests" */ = {
+		0AA667BB2E2AF49F006E5AEF /* Build configuration list for PBXNativeTarget "ClaudeCodeHubUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AA667BC2E2AF49F006E5AEF /* Debug */,

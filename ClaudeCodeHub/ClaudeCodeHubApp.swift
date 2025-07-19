@@ -1,6 +1,6 @@
 //
-//  Claude_Code_HubApp.swift
-//  Claude Code Hub
+//  ClaudeCodeHubApp.swift
+//  ClaudeCodeHub
 //
 //  Created by Edward Harrison on 7/18/25.
 //
@@ -9,10 +9,12 @@ import SwiftUI
 import SwiftData
 
 @main
-struct Claude_Code_HubApp: App {
+struct ClaudeCodeHubApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
+            ErrorEntry.self,
+            KnownError.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

@@ -1,6 +1,6 @@
 //
 //  Item.swift
-//  Claude Code Hub
+//  ClaudeCodeHub
 //
 //  Created by Edward Harrison on 7/18/25.
 //

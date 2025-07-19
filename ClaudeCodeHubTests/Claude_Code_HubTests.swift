@@ -1,6 +1,6 @@
 //
 //  Claude_Code_HubTests.swift
-//  Claude Code HubTests
+//  ClaudeCodeHubTests
 //
 //  Created by Edward Harrison on 7/18/25.
 //
