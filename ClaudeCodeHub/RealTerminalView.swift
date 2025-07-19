@@ -78,7 +78,10 @@ class TerminalProcess: ObservableObject {
             // Set non-blocking mode for the master
             let flags = fcntl(master, F_GETFL)
             if flags != -1 {
-                fcntl(master, F_SETFL, flags | O_NONBLOCK)
+                let result = fcntl(master, F_SETFL, flags | O_NONBLOCK)
+                if result == -1 {
+                    print("Warning: Failed to set non-blocking mode for PTY master")
+                }
             }
         } else {
             print("Failed to create PTY pair: \(result)")
@@ -261,7 +264,17 @@ class TerminalProcess: ObservableObject {
     }
     
     deinit {
-        stopTerminal()
+        // Clean up resources without calling MainActor methods
+        outputSource?.cancel()
+        process?.terminate()
+        
+        if ptyMaster != -1 {
+            close(ptyMaster)
+        }
+        
+        if ptySlave != -1 {
+            close(ptySlave)
+        }
     }
 }
 

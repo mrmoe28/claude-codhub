@@ -148,7 +148,11 @@ class DesktopCommanderMCP: ObservableObject {
         
         // Use DesktopCommander to open Terminal.app
         if let terminalURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.apple.Terminal") {
-            try? NSWorkspace.shared.openApplication(at: terminalURL, configuration: NSWorkspace.OpenConfiguration())
+            do {
+                try await NSWorkspace.shared.openApplication(at: terminalURL, configuration: NSWorkspace.OpenConfiguration())
+            } catch {
+                print("Failed to open Terminal.app: \(error.localizedDescription)")
+            }
         }
         
         let response = """
